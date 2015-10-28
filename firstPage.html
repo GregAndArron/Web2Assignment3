@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<?php
+session_start();
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><title>Title</title>
+<link rel="stylesheet" href="css/fouc.css" type="text/css" media="all" />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link href="style.css" type="text/css" rel="stylesheet" />
+<link href="signin.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+<div id="pagewrap">
+
+	<header>
+		<div class="headerCont">
+			<div class="logo col-sm-2">
+				<h2>Logo</h2>
+			</div>
+
+			<div class="banner col-sm-7">
+				<h2>Banner</h2>
+			</div>
+
+			<div class="form-signin col-sm-3">
+				<form  action='login.php' method='POST' >
+					<fieldset >
+						<legend>Login</legend>
+						<input type='hidden' name='submitted' id='submitted' value='1'/>
+						<input type='name' name='username' class='form-control' placeholder='Username' required autofocus/> 
+						<input type='password' name='password' class='form-control' placeholder='Password' required />
+						<input type='submit' name='login' value='Login' />
+						<a href = "signUp.html">Signup</a>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<div class="middleIndex col-sm-6">
+			<div class="middleTop col-sm-6">
+			Description of what this sight is for
+			</div>
+			<div class="middleMiddle col-sm-6">
+			Budgeting advice
+			</div>
+			<div class="middleBottom col-sm-6">
+			User feedback
+			</div>
+		</div>
+	</div>
+
+  <footer>
+  </footer>
+
+</div>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
