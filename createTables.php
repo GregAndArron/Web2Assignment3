@@ -45,10 +45,11 @@ Date: 24/10/2015 - 4:31:57 PM
         $queries[4] = "CREATE TABLE IF NOT EXISTS `tbl_user` 
             (`user_id` INT NOT NULL AUTO_INCREMENT COMMENT '',
             `username` VARCHAR(45) NOT NULL COMMENT '',
-            `firstName` VARCHAR(45) NOT NULL COMMENT '',
-            `lastName` VARCHAR(45) NOT NULL COMMENT '',
+            `fullName` VARCHAR(45) NOT NULL COMMENT '',
+            `birthDate` DATE NOT NULL COMMENT '',
             `password` VARCHAR(100) NOT NULL COMMENT '',
             `image` VARCHAR(100) NULL DEFAULT 'noimage.png' COMMENT '',
+            `description` VARCHAR(3000) NULL COMMENT '',
             PRIMARY KEY (`user_id`)  COMMENT '',
             UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC)  COMMENT '',
             UNIQUE INDEX `username_UNIQUE` (`username` ASC)  COMMENT '')
@@ -91,9 +92,9 @@ Date: 24/10/2015 - 4:31:57 PM
 
         //Create sample data
         //Add users        
-        $queries[0] = "INSERT INTO `tbl_user` (`user_id`, `username`, `firstName`, `lastName`, `password`) VALUES (1,'dale','Dale','Parsons','test')";
-        $queries[1] = "INSERT INTO `tbl_user` (`user_id`, `username`, `firstName`, `lastName`, `password`) VALUES (2,'dickaj1','Arron','Dick','test')";
-        $queries[2] = "INSERT INTO `tbl_user` (`user_id`, `username`, `firstName`, `lastName`, `password`) VALUES (3,'neilg2','Greg','Neilson','test')";
+        $queries[0] = "INSERT INTO `tbl_user` (`user_id`, `username`, `fullName`, `birthDate`, `password`) VALUES (1,'dale','Dale Parsons','2000-01-01','test')";
+        $queries[1] = "INSERT INTO `tbl_user` (`user_id`, `username`, `fullName`, `birthDate`, `password`) VALUES (2,'dickaj1','Arron Dick','1985-02-27','test')";
+        $queries[2] = "INSERT INTO `tbl_user` (`user_id`, `username`, `fullName`, `birthDate`, `password`) VALUES (3,'neilg2','Greg Neilson','2000-01-01','test')";
 
         do_queries($queries, $dbc);
 
