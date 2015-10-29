@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 	session_start();
-	if(!isset($_SESSION['login']))
+	if(!isset($_SESSION['user_id']))
 	{
 		header("location: firstPage.html");//sends them back to the first page
 	}
@@ -33,10 +33,10 @@
 			</div>
 
 			<div class="login col-sm-3">
-				<img id="profilePic" src="#" alt="profile pic" style="width:100px;height:100px;">
+                                <img id="profilePic" src="<?php echo "images/profile/{$_SESSION['image']}"; ?>" alt="profile pic" style="width:100px;height:100px;">
 				<button id="topSideBtns" type="button" class="topSideBtns btn btn-primary">My Profile </button>
 				<button id="topSideBtns" type="button" class="topSideBtns btn btn-primary">My settings</button>
-				<button id="logoutBtn" class="logoutBtn btn btn-sm btn-primary btn-block" type="submit" href = "logOut.php">Logout</button>
+				<button id="logoutBtn" class="logoutBtn btn btn-sm btn-primary btn-block" type="submit" onclick="location.href='logout.php';">Logout</button>
 			</div>
 		</div>
 	</header>
