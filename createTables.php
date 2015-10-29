@@ -13,6 +13,15 @@ Date: 24/10/2015 - 4:31:57 PM
     <body>
 
         <?php
+
+        function do_queries($queries, $dbc) {
+            foreach ($queries as $query) {
+                echo "$query...<br/>";
+                $result = mysqli_query($dbc, $query) or die("Couldn't add informtation to database: " . mysqli_error($dbc));
+                echo "done...<br/><br/>";
+            }
+        }
+
         //Get connection parameters
         require_once("scripts/connectvars.php");
 
@@ -39,6 +48,7 @@ Date: 24/10/2015 - 4:31:57 PM
             `firstName` VARCHAR(45) NOT NULL COMMENT '',
             `lastName` VARCHAR(45) NOT NULL COMMENT '',
             `password` VARCHAR(100) NOT NULL COMMENT '',
+            `image` VARCHAR(100) NULL DEFAULT 'noimage.png' COMMENT '',
             PRIMARY KEY (`user_id`)  COMMENT '',
             UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC)  COMMENT '',
             UNIQUE INDEX `username_UNIQUE` (`username` ASC)  COMMENT '')
@@ -77,19 +87,15 @@ Date: 24/10/2015 - 4:31:57 PM
                 ON UPDATE CASCADE)
             ENGINE = InnoDB;";
 
-        foreach ($queries as $query) {
-            $result = mysqli_query($dbc, $query) or die("Couldn't add informtation to database: " . mysqli_error($dbc));
-        }
+        do_queries($queries, $dbc);
 
         //Create sample data
         //Add users        
-        $queries[0] = "INSERT INTO `tbl_user` VALUES (1,'dale','Dale','Parsons','test')";
-        $queries[1] = "INSERT INTO `tbl_user` VALUES (2,'dickaj1','Arron','Dick','test')";
-        $queries[2] = "INSERT INTO `tbl_user` VALUES (3,'neilg2','Greg','Neilson','test')";
+        $queries[0] = "INSERT INTO `tbl_user` (`user_id`, `username`, `firstName`, `lastName`, `password`) VALUES (1,'dale','Dale','Parsons','test')";
+        $queries[1] = "INSERT INTO `tbl_user` (`user_id`, `username`, `firstName`, `lastName`, `password`) VALUES (2,'dickaj1','Arron','Dick','test')";
+        $queries[2] = "INSERT INTO `tbl_user` (`user_id`, `username`, `firstName`, `lastName`, `password`) VALUES (3,'neilg2','Greg','Neilson','test')";
 
-        foreach ($queries as $query) {
-            $result = mysqli_query($dbc, $query) or die("Couldn't add informtation to database: " . mysqli_error($dbc));
-        }
+        do_queries($queries, $dbc);
 
         //Add categories
         $queries[0] = "INSERT INTO `tbl_category` VALUES (1,'Junk food')";
@@ -102,12 +108,13 @@ Date: 24/10/2015 - 4:31:57 PM
         $queries[7] = "INSERT INTO `tbl_category` VALUES (8,'Entertainment')";
         $queries[8] = "INSERT INTO `tbl_category` VALUES (9,'Other')";
 
-        foreach ($queries as $query) {
-            $result = mysqli_query($dbc, $query) or die("Couldn't add informtation to database: " . mysqli_error($dbc));
-        }
+        do_queries($queries, $dbc);
 
         //Add items
+        //TODO: Edit dates so the date entered is always for the current weeek!
+        //
         //Items for Arron
+        
         $queries[0] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('2', '4', '24', '2015-10-19')";
         $queries[1] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('2', '3', '12.62', '2015-10-19')";
         $queries[2] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('2', '6', '5', '2015-10-19')";
@@ -135,10 +142,10 @@ Date: 24/10/2015 - 4:31:57 PM
         $queries[23] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('3', '6', '12', '2015-10-24')";
         $queries[24] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('3', '3', '6.35', '2015-10-24')";
         $queries[25] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('3', '1', '13.6', '2015-10-25')";
+
+        do_queries($queries, $dbc);
         
-        foreach ($queries as $query) {
-            $result = mysqli_query($dbc, $query) or die("Couldn't add informtation to database: " . mysqli_error($dbc));
-        }
+        echo "All queries finished";
         ?>
     </body>
 </html>

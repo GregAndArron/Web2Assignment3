@@ -6,3 +6,4 @@ scripts/connectvars.php
 
 # remove files generated from netbeans on Arrons laptop
 /nbproject/*
+/scripts/Test.php
