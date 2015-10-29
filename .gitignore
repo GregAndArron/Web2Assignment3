@@ -1,2 +1,5 @@
+#don't track database connection varibles
 scripts\connectvars.php
+
+#added at suggestion by elvis
 scripts/connectvars.php
