@@ -3,3 +3,6 @@ scripts\connectvars.php
 
 #added at suggestion by elvis
 scripts/connectvars.php
+
+# remove files generated from netbeans on Arrons laptop
+/nbproject/*
