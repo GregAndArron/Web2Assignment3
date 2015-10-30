@@ -1,45 +1,8 @@
-<!DOCTYPE html>
 <?php
-	session_start();
-	if(!isset($_SESSION['user_id']))
-	{
-		header("location: firstPage.html");//sends them back to the first page
-	}
-	
+$page_title="Home";
+$require_login=true;
+require_once("scripts/header.php");
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head><title>Home</title>
-<link rel="stylesheet" href="css/fouc.css" type="text/css" media="all" />
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<link href="style.css" type="text/css" rel="stylesheet" />
-<link href="signin.css" type="text/css" rel="stylesheet" />
-</head>
-
-<body>
-
-<div id="pagewrap">
-
-	<header>
-		<div class="headerCont">
-			<div class="logo col-sm-2">
-				<h2>Logo</h2>
-			</div>
-
-			<div class="banner col-sm-7">
-				<h2>Banner</h2>
-			</div>
-
-			<div class="login col-sm-3">
-                                <img id="profilePic" src="<?php echo "images/profile/{$_SESSION['image']}"; ?>" alt="profile pic" style="width:100px;height:100px;">
-				<button id="topSideBtns" type="button" class="topSideBtns btn btn-primary">My Profile </button>
-				<button id="topSideBtns" type="button" class="topSideBtns btn btn-primary">My settings</button>
-				<button id="logoutBtn" class="logoutBtn btn btn-sm btn-primary btn-block" type="submit" onclick="location.href='logout.php';">Logout</button>
-			</div>
-		</div>
-	</header>
 	<nav class="navbar navbar-default" role="navigation">
 	  <div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -56,7 +19,7 @@
 		  <ul class="nav navbar-nav">
 			<li class="active"><a href="#">Home</a></li>
 			<li><a href="#">Data Entry</a></li>
-			<li><a href="myDataAll.html">My Data</a></li>
+			<li><a href="myDataAll.php">My Data</a></li>
 			<li><a href="#">Friends</a></li>
 			<li><a href="#">Profile</a></li>
 		   
