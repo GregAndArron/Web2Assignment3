@@ -41,6 +41,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     }
 } else {
     //Username and/or password not supplied, this should happen due to checking on form!
+    //This will trip if page is directly visited!!
     echo "Username and/or password required<br/><a href='home.php'>Click here to return home</a>";
 }
 ?>
