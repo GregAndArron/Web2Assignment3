@@ -5,8 +5,8 @@ session_start();
 
 //Check if login is required and there is a logged in user
 if (isset($require_login) && !isset($_SESSION['user_id'])) {
-
-    header("location: firstPage.html"); //sends them back to the first page
+    //TODO: Message saying you need to log in?
+    header("location: firstPage.php"); //sends them back to the first page
 }
 
 //Connect to database
@@ -38,7 +38,7 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                                     <h2>Banner</h2>
                                 </div>
                                 <?php
-//Check for profile or login box'
+                                //Check for profile or login box to be displayed
                                 if (!isset($_SESSION['user_id'])) {
                                     ?>
                                     <div class="form-signin col-sm-3">
@@ -49,7 +49,7 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                                                 <input type='name' name='username' class='form-control' placeholder='Username' required autofocus/> 
                                                 <input type='password' name='password' class='form-control' placeholder='Password' required />
                                                 <input type='submit' name='login' value='Login' />
-                                                <a href = "signUp.html">Signup</a>
+                                                <a href = "signUp.php">Signup</a>
                                             </fieldset>
                                         </form>
                                     </div>
@@ -65,35 +65,5 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                                     <?php
                                 }
                                 ?>
-                                <div class="login col-sm-3">
-                                    <img id="profilePic" src="<?php echo "images/profile/{$_SESSION['image']}"; ?>" alt="profile pic" style="width:100px;height:100px;">
-                                        <button id="topSideBtns" type="button" class="topSideBtns btn btn-primary">My Profile </button>
-                                        <button id="topSideBtns" type="button" class="topSideBtns btn btn-primary">My settings</button>
-                                        <button id="logoutBtn" class="logoutBtn btn btn-sm btn-primary btn-block" type="submit" onclick="location.href = 'logout.php';">Logout</button>
-                                </div>
                             </div>
                         </header>
-                        <nav class="navbar navbar-default" role="navigation">
-                            <div class="container-fluid">
-                                <!-- Brand and toggle get grouped for better mobile display -->
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                </div>
-                                <!-- Collect the nav links, forms, and other content for toggling -->
-                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                    <ul class="nav navbar-nav">
-                                        <li class="active"><a href="#">Home</a></li>
-                                        <li><a href="#">Data Entry</a></li>
-                                        <li><a href="myDataAll.html">My Data</a></li>
-                                        <li><a href="#">Friends</a></li>
-                                        <li><a href="#">Profile</a></li>
-
-                                    </ul>
-                                </div><!-- /.navbar-collapse -->
-                            </div><!-- /.container-fluid -->
-                        </nav>
