@@ -3,7 +3,7 @@ Assignment for Greg and Arron Web 2 Assignment 3
 
 To run this application, you will need to create scripts/connectvars.php with the following content completed:
 
-<?php
+<?php<br/>
 define('DB_HOST', 'localhost');<br/>
 define('DB_PORT', '3306');<br/>
 define('DB_USER', 'USERNAME');<br/>
