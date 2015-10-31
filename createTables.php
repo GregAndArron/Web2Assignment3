@@ -22,6 +22,21 @@ Date: 24/10/2015 - 4:31:57 PM
             }
         }
 
+        function encrypt($password) {
+            //A higher "cost" is more secure but consumes more processing power
+            $cost = 10;
+
+            //Create a random salt
+            $salt = strtr(base64_encode(mcrypt_create_iv(16, MCRYPT_DEV_RANDOM)), '+', '.');
+
+            //Prefix information about the hash so PHP knows how to verify it later.
+            //"$2a$" Means we're using the Blowfish algorithm. The following two digits are the cost parameter.
+            $salt = sprintf("$2a%09d$", $cost) . $salt;
+
+            //Hash the password with the salt and return
+            return crypt($password, $salt);
+        }
+
         //Get connection parameters
         require_once("scripts/connectvars.php");
 
@@ -91,10 +106,13 @@ Date: 24/10/2015 - 4:31:57 PM
         do_queries($queries, $dbc);
 
         //Create sample data
-        //Add users        
-        $queries[0] = "INSERT INTO `tbl_user` (`user_id`, `username`, `fullName`, `birthDate`, `password`) VALUES (1,'dale','Dale Parsons','2000-01-01','test')";
-        $queries[1] = "INSERT INTO `tbl_user` (`user_id`, `username`, `fullName`, `birthDate`, `password`) VALUES (2,'dickaj1','Arron Dick','1985-02-27','test')";
-        $queries[2] = "INSERT INTO `tbl_user` (`user_id`, `username`, `fullName`, `birthDate`, `password`) VALUES (3,'neilg2','Greg Neilson','2000-01-01','test')";
+        //Add users
+        $queries[0] = "INSERT INTO `tbl_user` (`user_id`, `username`, `fullName`, `birthDate`, `password`) 
+                VALUES (1,'dale','Dale Parsons','2000-01-01','".encrypt("test")."')";
+        $queries[1] = "INSERT INTO `tbl_user` (`user_id`, `username`, `fullName`, `birthDate`, `password`) 
+                VALUES (2,'dickaj1','Arron Dick','1985-02-27','".encrypt("test")."')";
+        $queries[2] = "INSERT INTO `tbl_user` (`user_id`, `username`, `fullName`, `birthDate`, `password`) 
+                VALUES (3,'neilg2','Greg Neilson','2000-01-01','".encrypt("test")."')";
 
         do_queries($queries, $dbc);
 
@@ -115,7 +133,7 @@ Date: 24/10/2015 - 4:31:57 PM
         //TODO: Edit dates so the date entered is always for the current weeek!
         //
         //Items for Arron
-        
+
         $queries[0] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('2', '4', '24', '2015-10-19')";
         $queries[1] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('2', '3', '12.62', '2015-10-19')";
         $queries[2] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('2', '6', '5', '2015-10-19')";
@@ -145,7 +163,7 @@ Date: 24/10/2015 - 4:31:57 PM
         $queries[25] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('3', '1', '13.6', '2015-10-25')";
 
         do_queries($queries, $dbc);
-        
+
         echo "All queries finished";
         ?>
     </body>
