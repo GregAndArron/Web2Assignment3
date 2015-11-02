@@ -1,5 +1,5 @@
 <?php
-$page_title="Home";
+$page_title="Data entry";
 $require_login=true;
 require_once("scripts/header.php");
 ?>
@@ -17,8 +17,8 @@ require_once("scripts/header.php");
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
-			<li class="active"><a href="home.php">Home</a></li>
-			<li><a href="dataEntry.php">Data Entry</a></li>
+			<li><a href="home.php">Home</a></li>
+                        <li class="active"><A href="dataEntry.php">Data Entry</a></li>
 			<li><a href="myDataAll.php">My Data</a></li>
 			<li><a href="#">Friends</a></li>
 			<li><a href="#">Profile</a></li>

@@ -18,7 +18,7 @@ require_once("scripts/header.php");
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
 			<li><a href="home.php">Home</a></li>
-			<li><a href="#">Data Entry</a></li>
+			<li><a href="dataEntry.php">Data Entry</a></li>
 			<li class="active"><a href="myData.php">My Data</a></li>
 			<li><a href="#">Friends</a></li>
 			<li><a href="#">Profile</a></li>
