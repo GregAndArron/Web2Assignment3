@@ -31,7 +31,7 @@ Date: 24/10/2015 - 4:31:57 PM
 
             //Prefix information about the hash so PHP knows how to verify it later.
             //"$2a$" Means we're using the Blowfish algorithm. The following two digits are the cost parameter.
-            $salt = sprintf("$2a%09d$", $cost) . $salt;
+            $salt = sprintf("$2a$%02d$", $cost) . $salt;
 
             //Hash the password with the salt and return
             return crypt($password, $salt);
