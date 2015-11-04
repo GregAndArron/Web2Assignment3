@@ -3,6 +3,13 @@
 //Start the session
 session_start();
 
+//used for debugging
+function debug($var){
+    echo "<pre>";
+    print_r($var);
+    echo "</pre>";
+}
+
 //Check if login is required and there is a logged in user
 if (isset($require_login) && !isset($_SESSION['user_id'])) {
     //TODO: Message saying you need to log in?
