@@ -205,7 +205,7 @@ left: 0%;
 }
 .middleMyDataAllData{
   width: 98%; 
-  height:320px;
+  min-height:320px;
   float: left;
   padding: 5px 5px;
 }
@@ -223,7 +223,7 @@ left: 0%;
 }
 .middleMyDataSumData{
   width: 98%; 
-  height:300px;
+  min-height:300px;
   float: left;
   padding: 5px 5px;
 }
@@ -290,4 +290,10 @@ header,
 #login,
 footer {
   border: solid 1px #ccc;
+}
+
+.shorttable{
+    height:250px; 
+    overflow-y: scroll;
+    
 }
