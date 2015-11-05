@@ -20,10 +20,9 @@ require_once("scripts/navbar.php");
         <div class="middleMyData text-center col-sm-8">
 
             <div class="middleMyDataHeading text-center col-sm-8">
-                <h2>All Data</h2>
+                <h2>All expenditure to date:</h2>
             </div>
             <div class="middleMyDataAllData text-center col-sm-8">
-                <h2>All expenditure to date:</h2>
                 <div class="shorttable">
                     <?php
                     $query = "SELECT tbl_category.description, amount, date, comment"

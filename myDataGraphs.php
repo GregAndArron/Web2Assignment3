@@ -23,16 +23,13 @@ require_once("scripts/navbar.php");
                     <h2>Graphs</h2>
                     <p>Category comparisons</p>
                 </div>
-                <div class="middleMyDataTopRight text-center col-sm-8">
-                    <div class="col-lg-4">
-                        <div class="input-group">
-                            <section id="rdoBtns">
-                                <label class="block"><input type="radio" name="radgroup" value="A">Comparisons</label>
-                                <label class="block"><input type="radio" name="radgroup" value="B">Last 7 days</label>
-                                <label class="block"><input type="radio" name="radgroup" value="C">Last month</label>
-                            </section>
-                        </div><!-- /input-group -->
-                    </div><!-- /.col-lg-6 -->
+                <div class="middleMyDataTopRight text-left col-sm-8">
+					<div class="form">
+
+						<label class="radio"><input value="1" type="radio">Comparisons</label>
+						<label class="radio"><input value="2" type="radio">Last 7 days</label>
+						<label class="radio"><input value="3" type="radio">Last month</label>
+					</div>
                 </div>
             </div>
             <div class="middleMyDataBottom text-center col-sm-8">
