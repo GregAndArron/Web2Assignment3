@@ -2,6 +2,12 @@
 $page_title="First page";
 //$require_login
 require_once("scripts/header.php");
+
+//Ff user is logged in then send them to home.php!
+if (isset($_SESSION['user_id'])) {
+    header("location: home.php"); //Sends them back to the first page
+}
+
 ?>
 	<div class="container">
 		<div class="middleIndex col-sm-6">
