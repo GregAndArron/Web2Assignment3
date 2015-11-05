@@ -39,18 +39,18 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
             <header>
                 <div class="headerCont">
-                    <div class="logo col-sm-2">
-                        <h2>Logo</h2>
+                    <div class="logo col-md-3 col-lg-3">
+                        
                     </div>
 
-                    <div class="banner col-sm-7">
-                        <h2>Banner</h2>
+                    <div class="banner col-md-6 col-lg-6">
+                        <img class="img-responsive" src="images/bannerFinal.png" alt="Smiley face" height="215" width="900">
                     </div>
                     <?php
                     //Check for profile or login box to be displayed
                     if (!isset($_SESSION['user_id'])) {
                         ?>
-                        <div class="form-signin col-sm-3">
+                        <div class="form-signin col-md-3 col-lg-2">
                             <form  action='login.php' method='POST' >
                                 <fieldset >
                                     <legend>Login</legend>
