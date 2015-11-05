@@ -3,6 +3,9 @@ html, body{
   margin:0px; 
   padding:0px;
 }
+h1{
+ color: #fff;
+}
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -36,17 +39,28 @@ left: 0%;
   float: left;
 }
 /* nav */
+.navbar-inverse{
+  background-image: linear-gradient(to top, #001F40 0%,#007CFF 100%);
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  background-color: #001F40;
+  color: #fff;
+}
+.navbar-inverse .navbar-nav>li>a {
+  font-size:150%;
+  color: #fff;
+}
 .navbar-nav {
   width: 100%;
   text-align: center;
 }
+
 .navbar-nav > li {
   float: none;
   display: inline-block;
 }
 #rdoBtns {
 	display: block;
-
     text-align:center;
     line-height:14px;
     text-shadow:0px 0px 3px #eee;  
@@ -66,6 +80,8 @@ left: 0%;
 #pagewrap {
   padding: 5px;
   width: 100%;
+  background-color: #0063CC;
+  /*background-image: linear-gradient(45deg, #fff33 40%,#ffcc00 70%);
   /*margin: 20px auto;*/
 }
 
@@ -117,10 +133,12 @@ left: 0%;
   float: left;
   padding: 10px 15px;
   margin: 5px 0px 0px 0px;
-  border: solid 1px #ccc;
+  background-color: #001F40;
+
 }
 .middleTop {
   width: 98%; 
+  background-color: #fff;
   height:300px;
   float: left;
   padding: 5px 5px;
@@ -143,6 +161,7 @@ left: 0%;
 }
 .middleMiddleLeft{
   width: 49%;
+  background-color: #fff;
   height:200px;
   float: left;
   padding: 5px 5px;
@@ -150,6 +169,7 @@ left: 0%;
 }
 .middleMiddleRight{
   width: 49%;
+  background-color: #fff;
   height:200px;
   float: left;
   padding: 5px 5px;
@@ -157,6 +177,7 @@ left: 0%;
 }
 .middleBottom {
   width: 98%; 
+  background-color: #fff;
   height:300px;
   float: left;
   padding: 5px 5px;
@@ -167,15 +188,18 @@ left: 0%;
   height:800px;
   float: left;
   padding: 5px 5px;
-  border-left: solid 1px #ccc;
-  border-bottom: solid 1px #ccc;
-  border-right: solid 1px #ccc;
+  background-color: #fff;
+
+  border-bottom: solid 1px #000;
+  border-left: solid 1px #000;
+  border-right: solid 1px #000;
 }
 .middleMyDataTop{
   width: 100%; 
   height:200px;
   float: left;
   padding: 5px 5px;
+  
   margin-bottom: 5px
 }
 .middleMyDataBottom{
@@ -204,25 +228,25 @@ left: 0%;
   padding: 5px 5px;
 }
 .middleMyDataAllData{
-  width: 98%; 
+  width: 100%; 
   height:320px;
   float: left;
   padding: 5px 5px;
 }
 .middleMyDataAllDataTop{
-  width: 98%; 
+  width: 100%; 
   height:380px;
   float: left;
   padding: 5px 5px;
 }
 .middleMyDataAllDataBottom{
-  width: 98%; 
+  width: 100%; 
   height:320px;
   float: left;
   padding: 5px 5px;
 }
 .middleMyDataSumData{
-  width: 98%; 
+  width: 100%; 
   height:300px;
   float: left;
   padding: 5px 5px;
@@ -267,8 +291,6 @@ header,
 .marLeft{
   margin-left: 20px;
 }
-#pagewrap,
-header,
 #profilePic,
 #navMenu,
 #middle,
@@ -279,15 +301,8 @@ header,
 .middleMiddleRight,
 .middleMyDataTop,
 .middleMyDataBottom,
-.middleMyDataAllData,
-.middleMyDataSumData,
 .middleMyDataCal,
-.middleMyDataAllDataTop,
 .middleMyDataAllDataBottom,
-#sidebar,
-#logo,
-#banner,
-#login,
-footer {
-  border: solid 1px #ccc;
+#sidebar {
+  border: solid 1px #fff;
 }

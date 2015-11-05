@@ -8,7 +8,7 @@ require_once("scripts/navbar.php");
 <div class="container">
     <div class="middle col-sm-6">
         <div class="middlepageName text-center col-sm-6">
-            <h2>Data Entry</h2>
+            <h1>Data Entry</h1>
         </div>
         <div class="middleTop col-sm-6">
             <form id="myForm" action="#" method="POST">

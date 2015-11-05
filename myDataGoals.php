@@ -8,7 +8,7 @@ require_once("scripts/navbar.php");
 <div class="container">
     <div class="middle col-sm-6">
         <div class="middlepageName text-center col-sm-6">
-            <h2>My Data</h2>
+            <h1>My Data</h1>
         </div>
 
         <ul class="nav nav-tabs col-sm-12">
@@ -19,13 +19,13 @@ require_once("scripts/navbar.php");
         </ul>
         <div class="middleMyData col-sm-8">
             <div class="middleMyDataHeading text-center col-sm-8">
-                <h2>Goals</h2>
+                <h1>Goals</h1>
             </div>
             <div class="middleMyDataAllDataTop col-sm-8">
 
                 <div class="middleMyDataGoalsLeft col-sm-6">
                     <div class="marTop">
-                        <label class="marTop"for="goals">Spend less than: $</label><input id="goals" type="number" value="0"/>
+                        <label class="marTop"for="goals"><p>Spend less than: $</p></label><input id="goals" type="number" value="0"/>
                     </div>
                     <div class="marLeft marTop">
                         <label for="goals">On </label>

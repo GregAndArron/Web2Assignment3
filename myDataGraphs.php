@@ -8,7 +8,7 @@ require_once("scripts/navbar.php");
 <div class="container">
     <div class="middle col-sm-6">
         <div class="middlepageName text-center col-sm-6">
-            <h2>My Data</h2>
+            <h1>My Data</h1>
         </div>
 
         <ul class="nav nav-tabs col-sm-12">
