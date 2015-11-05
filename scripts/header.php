@@ -29,6 +29,7 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
         <link href="style.css" type="text/css" rel="stylesheet" />
         <link href="signin.css" type="text/css" rel="stylesheet" />
+		<link href="tabs.css" type="text/css" rel="stylesheet" />
         <script type="text/javascript" src="scripts/dataEntry.js"></script>
     </head>
 
