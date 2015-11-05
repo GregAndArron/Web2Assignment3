@@ -50,7 +50,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
 }
 
 if ($success == true) {
-    echo "You have successfully logged in<br/><a href='home.php'>Click here to return home</a>";
+    header("location: home.php"); //sends them back to the first page
 } else {
     echo "Username and/or password incorrect<br/><a href='home.php'>Click here to return home</a>";
 }
