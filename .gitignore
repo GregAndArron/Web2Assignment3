@@ -7,3 +7,7 @@ scripts/connectvars.php
 # remove files generated from netbeans on Arrons laptop
 /nbproject/*
 /scripts/Test.php
+
+# ignore temp and swap files that kate is creating
+*.swp
+*.tmp
