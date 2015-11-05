@@ -307,3 +307,9 @@ header,
 #sidebar {
   border: solid 1px #fff;
 }
+
+.shorttable{
+    height:250px; 
+    overflow-y: scroll;
+    
+}

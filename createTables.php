@@ -161,6 +161,8 @@ Date: 24/10/2015 - 4:31:57 PM
         $queries[23] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('3', '6', '12', '2015-10-24')";
         $queries[24] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('3', '3', '6.35', '2015-10-24')";
         $queries[25] = "INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('3', '1', '13.6', '2015-10-25')";
+        //test for current day
+        $queries[26]="INSERT `tbl_item` (`user_id`, `category_id`, `amount`, `date`) VALUES ('2', '1', '13.6', '2015-11-05')";
 
         do_queries($queries, $dbc);
 
