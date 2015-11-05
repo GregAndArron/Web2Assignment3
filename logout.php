@@ -16,3 +16,5 @@ session_destroy();
 //TODO: Return user to landing page
 
 ?>
+<meta http-equiv="refresh" content="3;url=firstPage.php" />
+<h1>You have been logged out</h1>
