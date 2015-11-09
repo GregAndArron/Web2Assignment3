@@ -20,17 +20,17 @@ if (isset($_SESSION['user_id'])) {
 						<legend class="">Register</legend>
 					</div>
 					<div class="control-group">
-						<label class="control-label"  for="secret_word">Registration word</label>
-						<div class="controls">
-							<input type="secret_word" id="secret_word" name="secret_word" placeholder="" class="input-xlarge input-mysize">
-							<p class="help-block">Please enter the registration word you were given</p>
-						</div>
-					</div>
-					<div class="control-group">
 						<label class="control-label"  for="username">Username</label>
 						<div class="controls">
 							<input type="text" id="username" name="username" placeholder="" class="input-xlarge input-mysize">
 							<p class="help-block">Username can contain any letters or numbers, without spaces</p>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label"  for="fullName">Full name</label>
+						<div class="controls">
+							<input type="text" id="fullName" name="fullName" placeholder="" class="input-xlarge input-mysize">
+							<p class="help-block">Your full Name can contain any letters, with spaces</p>
 						</div>
 					</div>
 					<div class="control-group">
@@ -53,6 +53,13 @@ if (isset($_SESSION['user_id'])) {
 						<div class="controls">
 							<input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge input-mysize">
 							<p class="help-block">Please confirm password</p>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label"  for="secret_word">Registration word</label>
+						<div class="controls">
+							<input type="secret_word" id="secret_word" name="secret_word" placeholder="" class="input-xlarge input-mysize">
+							<p class="help-block">Please enter the registration word you were given</p>
 						</div>
 					</div>
 					<div class="control-group">

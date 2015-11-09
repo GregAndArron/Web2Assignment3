@@ -39,7 +39,7 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
             <header>
                 <div class="headerCont">
-                    <div class="logo col-md-3 col-lg-1">
+                    <div class="logo col-md-3 col-lg-3">
                         
                     </div>
 
@@ -50,7 +50,7 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                     //Check for profile or login box to be displayed
                     if (!isset($_SESSION['user_id'])) {
                         ?>
-                        <div class="form-signin col-md-3 col-lg-1">
+                        <div class="form-signin col-md-3 col-lg-2">
                             <form  action='login.php' method='POST' >
                                 <fieldset >
                                     <legend style="color:#fff">Login</legend>
@@ -65,7 +65,7 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                         <?php
                     } else {
                         ?>
-                        <div class="login col-sm-3">
+                        <div class="login col-md-3 col-lg-2">
                             <img id="profilePic" src="<?php echo "images/profile/{$_SESSION['image']}"; ?>" alt="profile pic" style="width:100px;height:100px;">
                                 <button id="topSideBtns" type="button" class="topSideBtns btn btn-primary">My Profile </button>
                                 <button id="topSideBtns" type="button" class="topSideBtns btn btn-primary">My settings</button>
