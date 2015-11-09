@@ -39,7 +39,7 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
             <header>
                 <div class="headerCont">
-                    <div class="logo col-md-3 col-lg-3">
+                    <div class="logo col-md-3 col-lg-1">
                         
                     </div>
 
@@ -50,7 +50,7 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                     //Check for profile or login box to be displayed
                     if (!isset($_SESSION['user_id'])) {
                         ?>
-                        <div class="form-signin col-md-3 col-lg-2">
+                        <div class="form-signin col-md-3 col-lg-1">
                             <form  action='login.php' method='POST' >
                                 <fieldset >
                                     <legend style="color:#fff">Login</legend>
