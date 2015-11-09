@@ -53,12 +53,12 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                         <div class="form-signin col-md-3 col-lg-2">
                             <form  action='login.php' method='POST' >
                                 <fieldset >
-                                    <legend>Login</legend>
+                                    <legend style="color:#fff">Login</legend>
                                     <input type='hidden' name='submitted' id='submitted' value='1'/>
                                     <input type='name' name='username' class='form-control' placeholder='Username' required autofocus/> 
                                     <input type='password' name='password' class='form-control' placeholder='Password' required />
                                     <input type='submit' name='login' value='Login' />
-                                    <a href = "signUp.php">Signup</a>
+                                    <a href = "signup.php" style="color:#fff">Register</a>
                                 </fieldset>
                             </form>
                         </div>

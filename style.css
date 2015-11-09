@@ -1,8 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 html, body{
+  height: 100%;
   margin:0px; 
   padding:0px;
-  color: #000;
 }
 h1{
  color: #fff;
@@ -26,6 +26,7 @@ header {
 input, #goals{
   width: 50px;
 }
+
 .radio input[type=radio], .radio-inline input[type=radio] {
 position: absolute;
 
@@ -81,6 +82,7 @@ left: 0%;
 #pagewrap {
   padding: 5px;
   width: 100%;
+  height: 100%;
   background-color: #0063CC;
   /*background-image: linear-gradient(45deg, #fff33 40%,#ffcc00 70%);
   /*margin: 20px auto;*/
@@ -105,6 +107,19 @@ left: 0%;
   width: 10%;
   float: left;
   padding: 5px 15px;
+}
+.input-mysize {
+  width: 200px 
+}
+.middleSignup{
+margin-top:35px;
+  background-color: #001F40;
+}
+.middleSignupCenter{
+  width:100%;
+  height:550px;
+  margin: 15px 0 15px 0;
+  background-color: #fff;
 }
 .middleMyDataGoalsBtn{
   width: 100%;
