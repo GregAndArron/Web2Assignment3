@@ -54,7 +54,7 @@ function encrypt($password) {
                     //Sanitize username from form and strip leading/trailing spaces
                     $username = mysqli_escape_string($dbc, trim($_POST['username']));
                     //CHeck username isn't empty after trimming spaces
-                    if ($username != "") {
+                    if (!empty($username)) {
                         //Check validity with regex(letters, numbers and _)
                         if (!preg_match("/([^\w]+)/i", $username)) {
                             //Check username is not already in the database
@@ -76,9 +76,12 @@ function encrypt($password) {
                 //Check fullName
                 if (isset($_POST['fullName'])) {
                     $fullName = mysqli_escape_string($dbc, trim($_POST['fullName']));
-                    //Check there is a name entered
+                    //Check there is a name entered after trimming spaces
                     if (!empty($fullName)) {
-                        
+                        //Check validity with regex(letters and spaces)
+                        if (preg_match("/([^a-z\s]+)/i", $fullName)) {
+                            $fullNameError = "Please enter a name using only letters and spaces";
+                        }
                     } else {
                         $fullNameError = "Please enter your name";
                     }
@@ -107,7 +110,31 @@ function encrypt($password) {
                     $emailError = "Please enter an email address";
                 }
 
-                //TODO Check password is valid and matches password_confirm, no check on second password validity
+                //Check password is valid and matches password_confirm, no check on second password validity
+                if (isset($_POST['password'])) {
+                    //Sanitize password and trim leading/trailing spaces
+                    $password = mysqli_escape_string($dbc, trim($_POST['password']));
+                    //No checks as we'll allow all characters in a password(SQL injection aside as escape_string deals with it)
+                } else {
+                    $passwordError = "Please enter a password";
+                }
+
+                //Check password 2 is valid and matches password_confirm, no check on second password validity
+                if (isset($_POST['password_confirm'])) {
+                    //Sanitize password and trim leading/trailing spaces
+                    $password_confirm = mysqli_escape_string($dbc, trim($_POST['password_confirm']));
+                    //No checks as we'll allow all characters in a password(SQL injection aside as escape_string deals with it)
+                } else {
+                    $password_confirmError = "Please enter the second password";
+                }
+
+                //Check the password actually match
+                if ($password != $password_confirm) {
+                    $password_confirmError = "Passwords do not match";
+                }
+
+
+                $password_confirm = mysqli_escape_string($dbc, trim($_POST['password_confirm']));
                 //Check if there has been no errors, so create new user and place into databse
                 if ($secret_wordError . $usernameError . $fullNameError . $emailError . $passwordError . $password_confirmError == "") {
                     $insertQuery = "INSERT INTO `tbl_user` (`username`, `fullName`, `email`, `password`) "
@@ -142,6 +169,7 @@ function encrypt($password) {
                         <div class="controls">
                             <input type="text" id="fullName" name="fullName" placeholder="" class="input-xlarge input-mysize" required value="<?php echo $fullName; ?>">
                             <p class="help-block">Your full Name can contain any letters, with spaces</p>
+                            <span class="error"><?php echo $fullNameError; ?></span>
                         </div>
                         <div class = "control-group">
                             <label class = "control-label" for = "email">E-mail</label>
