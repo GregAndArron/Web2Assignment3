@@ -114,11 +114,11 @@ require_once("scripts/navbar.php");
             </form>
             <?php
             //Print out errors
-            //TODO: put it on the actaul form...
+            //TODO: put it on the actual form...
             echo $categoryError." ".$priceError ." ".$dateError ;
             ?>
         </div>
-        <h2>Todays items</h2>
+        <h2>Previous items</h2>
         <div class="middleBottom col-sm-6">
             <div class="shorttable">
                 <?php
@@ -127,8 +127,9 @@ require_once("scripts/navbar.php");
                         . " JOIN tbl_category"
                         . " USING (category_id)"
                         . " WHERE user_id='{$_SESSION['user_id']}'"
-                        . " AND DATE(date)=DATE(NOW())";
-
+                        . " ORDER BY date DESC";
+                 //       . " AND DATE(date)=DATE(NOW())";
+                        
                 $result = mysqli_query($dbc, $query) or die("Couldn't get user data; " . mysqli_error($dbc));
 
 //Show results in a pretty table
@@ -144,7 +145,7 @@ require_once("scripts/navbar.php");
                     }
                     echo "</table>";
                 } else {
-                    echo "No items added for today";
+                    echo "No items found.";
                 }
                 ?>
             </div>

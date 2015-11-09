@@ -13,6 +13,6 @@ session_destroy();
 
 //TODO: Check there is anything else that needs deleted/unset
 
-//TODO: Return user to landing page
+//Return user to landing page
 header("location: firstPage.php"); //sends them back to the first page
 ?>
