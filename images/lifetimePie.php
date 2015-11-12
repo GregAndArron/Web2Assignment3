@@ -38,7 +38,6 @@ WHERE tbl_item.user_id='{$_SESSION['user_id']}' " . $range .
         " GROUP BY tbl_category.description
 ORDER BY tbl_category.description ASC;";
 
-echo $query;
 $result = mysqli_query($dbc, $query) or die("Couldn't get user data: ") . mysqli_error($dbc);
 
 while ($row = mysqli_fetch_row($result)) {

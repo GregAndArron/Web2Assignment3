@@ -27,18 +27,37 @@ require_once("scripts/navbar.php");
                     <div class="form">
 
                         <label class="radio"><input value="1" type="radio">Comparisons</label>
-                        <label class="radio"><input value="2" type="radio">Last 7 days</label>
-                        <label class="radio"><input value="3" type="radio">Last month</label>
+                        <label class="radio"><input value="2" type="radio" onclick="changeType('all');">All data</label>
+                        <label class="radio"><input value="3" type="radio" onclick="changeType('week');">Last 7 days</label>
+                        <label class="radio"><input value="4" type="radio" onclick="changeType('month');">Last month</label>
                     </div>
                 </div>
             </div>
             <div class="middleMyDataBottom text-center col-sm-8">
                 <h2>Life time spending</h2>
-                <div><img src="images/lifetimePie.php"/><img src="images/lifetimeBar.php"/></div>
+                <div><img id="pieGraph" src="images/lifetimePie.php"/><img id="barGraph" src="images/lifetimeBar.php"/></div>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function changeType(type) {
+        var request;
+        switch (type) {
+            case "all":
+                request="";
+                break;
+            case "week":
+                request="?type=week";
+                break;
+            case "month":
+                request="?type=month";
+                break;
+        }
+        
+        document.getElementById("pieGraph").src="images/lifetimePie.php"+request;
+    }
+</script>
 
 <footer>
 </footer>
