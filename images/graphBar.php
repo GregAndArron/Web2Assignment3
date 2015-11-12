@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+include('../scripts/phpgraphlib.php');
+$graph = new PHPGraphLib(400, 400);
+$title="Spending overall by total";
 
 //Check for request two show current month/current week
 $range = ""; //Default show all
@@ -9,17 +12,15 @@ if (isset($_REQUEST['type'])) {
     if ($_REQUEST['type'] == "week") {
         //Last 7 days
         $range = "AND date > DATE_SUB(NOW(), INTERVAL 7 DAY)";
-    } else if ($_REQUEST['type']=="month"){
+        $title = "Spending in last 7 days by total";
+    } else if ($_REQUEST['type'] == "month") {
         //Previous month
         $range = "AND YEAR(date) = YEAR(CURRENT_DATE - INTERVAL 1 MONTH)
 AND MONTH(date) = MONTH(CURRENT_DATE - INTERVAL 1 MONTH)";
+        $title = "Spending in previous month by total";
     }
 }
 
-include('../scripts/phpgraphlib.php');
-include('../scripts/phpgraphlib_pie.php');
-$graph = new PHPGraphLibPie(400, 400);
-//
 //Null array so the array_push works
 $data = array();
 
@@ -30,22 +31,23 @@ require_once("../scripts/connectvars.php");
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Couldn't connect to server: " . mysqli_error());
 
 //Create query to get required data
-//Ignore categories where nothing has been spent
-$query = "SELECT tbl_category.description AS 'Expense', SUM(tbl_item.amount) AS 'Total'
-FROM tbl_item
-JOIN (tbl_category) USING (category_id)
-WHERE tbl_item.user_id='{$_SESSION['user_id']}' " . $range .
-        " GROUP BY tbl_category.description
-ORDER BY tbl_category.description ASC;";
+$query = "SELECT description, coalesce(total.amount,0)
+FROM tbl_category
+LEFT JOIN
+	(SELECT category_id, sum(amount) AS 'amount'
+	FROM tbl_item
+	WHERE user_id='{$_SESSION['user_id']}' " . $range .
+        " GROUP BY category_id) total
+        USING (category_id)";
 
-$result = mysqli_query($dbc, $query) or die("Couldn't get user data: ") . mysqli_error($dbc);
+$result = mysqli_query($dbc, $query) or die("Couldn't get user data: ") . mysqli_error();
 
 while ($row = mysqli_fetch_row($result)) {
     $data[$row[0]] = $row[1];
 }
 
 $graph->addData($data);
-$graph->setLabelTextColor('50,50,50');
-$graph->setLegendTextColor('50,50,50');
+$graph->setTitle($title);
+$graph->setGradient('red', 'maroon');
 $graph->createGraph();
 ?>
