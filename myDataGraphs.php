@@ -24,16 +24,17 @@ require_once("scripts/navbar.php");
                     <p>Category comparisons</p>
                 </div>
                 <div class="middleMyDataTopRight text-left col-sm-8">
-					<div class="form">
+                    <div class="form">
 
-						<label class="radio"><input value="1" type="radio">Comparisons</label>
-						<label class="radio"><input value="2" type="radio">Last 7 days</label>
-						<label class="radio"><input value="3" type="radio">Last month</label>
-					</div>
+                        <label class="radio"><input value="1" type="radio">Comparisons</label>
+                        <label class="radio"><input value="2" type="radio">Last 7 days</label>
+                        <label class="radio"><input value="3" type="radio">Last month</label>
+                    </div>
                 </div>
             </div>
             <div class="middleMyDataBottom text-center col-sm-8">
-                <h2>Pie graph goes here</h2>
+                <h2>Life time spending</h2>
+                <div><img src="images/lifetimePie.php"/><img src="images/lifetimeBar.php"/></div>
             </div>
         </div>
     </div>
