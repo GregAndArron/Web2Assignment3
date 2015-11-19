@@ -24,20 +24,43 @@ require_once("scripts/navbar.php");
                     <p>Category comparisons</p>
                 </div>
                 <div class="middleMyDataTopRight text-left col-sm-8">
-					<div class="form">
-
-						<label class="radio"><input value="1" type="radio" name="graphs">Comparisons</label>
-						<label class="radio"><input value="2" type="radio" name="graphs">Last 7 days</label>
-						<label class="radio"><input value="3" type="radio" name="graphs">Last month</label>
-					</div>
+                    <div class="form">
+                        <label class="radio"><input value="1" name="myGraphs" type="radio">Comparisons</label>
+                        <label class="radio"><input value="2" name="myGraphs" type="radio" onclick="changeType('all');">All data</label>
+                        <label class="radio"><input value="3" name="myGraphs" type="radio" onclick="changeType('week');">Last 7 days</label>
+                        <label class="radio"><input value="4" name="myGraphs" type="radio" onclick="changeType('month');">Last month</label>
+                    </div>
                 </div>
             </div>
             <div class="middleMyDataBottom text-center col-sm-8">
-                <h2>Pie graph goes here</h2>
+                <h2>Life time spending</h2>
+                <div><img id="pieGraph" src="images/graphPie.php"/><img id="barGraph" src="images/graphBar.php"/></div>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function changeType(type) {
+        var request;
+        switch (type) {
+            case "all":
+                request = "";
+                break;
+            case "week":
+                request = "?type=week";
+                break;
+            case "month":
+                request = "?type=month";
+                break;
+            default:
+                request = "";
+                break;
+        }
+
+        document.getElementById("pieGraph").src = "images/graphPie.php" + request;
+        document.getElementById("barGraph").src = "images/graphBar.php" + request;
+    }
+</script>
 
 <footer>
 </footer>
