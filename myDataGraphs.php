@@ -26,10 +26,10 @@ require_once("scripts/navbar.php");
                 <div class="middleMyDataTopRight text-left col-sm-8">
                     <div class="form">
 
-                        <label class="radio"><input value="1" type="radio">Comparisons</label>
-                        <label class="radio"><input value="2" type="radio" onclick="changeType('all');">All data</label>
-                        <label class="radio"><input value="3" type="radio" onclick="changeType('week');">Last 7 days</label>
-                        <label class="radio"><input value="4" type="radio" onclick="changeType('month');">Last month</label>
+                        <label class="radio"><input value="1" name="myGraphs" type="radio">Comparisons</label>
+                        <label class="radio"><input value="2" name="myGraphs" type="radio" onclick="changeType('all');">All data</label>
+                        <label class="radio"><input value="3" name="myGraphs" type="radio" onclick="changeType('week');">Last 7 days</label>
+                        <label class="radio"><input value="4" name="myGraphs" type="radio" onclick="changeType('month');">Last month</label>
                     </div>
                 </div>
             </div>
