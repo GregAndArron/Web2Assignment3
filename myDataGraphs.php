@@ -26,9 +26,9 @@ require_once("scripts/navbar.php");
                 <div class="middleMyDataTopRight text-left col-sm-8">
 					<div class="form">
 
-						<label class="radio"><input value="1" type="radio">Comparisons</label>
-						<label class="radio"><input value="2" type="radio">Last 7 days</label>
-						<label class="radio"><input value="3" type="radio">Last month</label>
+						<label class="radio"><input value="1" type="radio" name="graphs">Comparisons</label>
+						<label class="radio"><input value="2" type="radio" name="graphs">Last 7 days</label>
+						<label class="radio"><input value="3" type="radio" name="graphs">Last month</label>
 					</div>
                 </div>
             </div>
